@@ -1,0 +1,175 @@
+:root {
+    --overlay: rgba(0, 10, 30, 0.85);
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --text-color: white;
+    --btn-gradient: linear-gradient(45deg, #00f2fe, #4facfe);
+}
+
+body.light-mode {
+    --overlay: rgba(255,255,255,0.85);
+    --card-bg: rgba(255,255,255,0.9);
+    --text-color: #222;
+    --btn-gradient: linear-gradient(45deg, #ff9a9e, #fad0c4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-color);
+    transition: 0.5s;
+
+    background:
+        linear-gradient(var(--overlay), var(--overlay)),
+        url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Floating Particle Effect */
+.particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveParticles 20s linear infinite;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+@keyframes moveParticles {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
+
+.main-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+}
+
+.card {
+    width: 380px;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 10px cyan;
+}
+
+button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    background: var(--btn-gradient);
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    font-size: 12px;
+    color: #ff8080;
+}
+
+.success {
+    text-align: center;
+    margin-top: 10px;
+    color: #00ffcc;
+}
+
+/* To-Do */
+.todo-input {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-input input {
+    flex: 1;
+}
+
+ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+li button {
+    background: red;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#toggleTheme {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

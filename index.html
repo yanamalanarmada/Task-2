@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Contact & Task Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Animated Background Particles -->
+<div class="particles"></div>
+
+<!-- Dark/Light Toggle -->
+<div class="theme-toggle">
+    <button id="toggleTheme">🌙</button>
+</div>
+
+<div class="main-container">
+
+    <!-- Contact Form -->
+    <div class="card">
+        <h2>Contact IT Team</h2>
+
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="name">
+                <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" id="email">
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea id="message" rows="3"></textarea>
+                <small class="error" id="messageError"></small>
+            </div>
+
+            <button type="submit">Send Message</button>
+            <p class="success" id="successMessage"></p>
+        </form>
+    </div>
+
+    <!-- To-Do -->
+    <div class="card">
+        <h2>Project Task Manager</h2>
+
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Enter new task">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
